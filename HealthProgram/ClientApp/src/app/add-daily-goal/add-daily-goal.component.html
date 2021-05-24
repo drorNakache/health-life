@@ -1,0 +1,130 @@
+<p>add-daily-goal!</p>
+
+<div class="form-group">
+    <label>Date of Goal</label>
+    <input class="form-control form-control-lg" placeholder="DD/MM/YYYY" name="currentDate" ngModel
+    (value) ="date"
+        required >
+</div>
+
+
+  <form novalidate autocomplete="off" #form1="ngForm" (submit)="onBreakFastSubmit(form1)">
+
+    <div class="form-group">
+        <label>BREAKFAST</label>
+        <label>add food</label>
+        <input class="form-control form-control-lg" ngModel placeholder="Food Name" name="name" required >
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+
+            <label>calories</label>
+        <input class="form-control form-control-lg" ngModel placeholder="calories" name="calories">
+    
+    
+    </div>
+</div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>unit</label>
+        <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
+    </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" ngModel type="submit" [disabled]="form.invalid">Add Food</button>
+    </div>
+
+  </form>
+
+  <form novalidate autocomplete="off" #form2="ngForm" (submit)="onLaunchSubmit(form2)">
+    <div class="form-group">
+        <label>LAUNCH</label>
+        <label>add food</label>
+        <input class="form-control form-control-lg " ngModel placeholder="" name="height"
+           >
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>calories</label>
+        <input class="form-control form-control-lg" ngModel placeholder="calories" name="calories">
+    </div> 
+
+ </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>unit</label>
+        <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
+    </div>
+</div>
+<div class="form-group">
+    <button class="btn btn-info btn-lg btn-block" ngModel type="submit" [disabled]="form.invalid">SUBMIT</button>
+</div>
+
+  </form>
+
+  <form novalidate autocomplete="off" #form3="ngForm" (submit)="onDinnerSubmit(form3)">
+
+    <div class="form-group">
+        <label>DINNER</label>
+        <label>add food</label>
+        <input class="form-control form-control-lg " ngModel placeholder="" name="height"
+           >
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>calories</label>
+        <input class="form-control form-control-lg" ngModel placeholder="calories" name="calories">
+    </div>
+</div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>unit</label>
+        <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
+    </div>
+</div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" ngModel type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+
+
+  </form>
+
+  <form novalidate autocomplete="off" #form4="ngForm" (submit)="onSnacksSubmit(form4)">
+    <div class="form-group">
+        <label>SNACKS</label>
+        <label>add food</label>
+        <input class="form-control form-control-lg " ngModel placeholder="" name="height"
+           >
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>calories</label>
+        <input class="form-control form-control-lg" ngModel placeholder="calories" name="calories">
+    </div>
+</div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>unit</label>
+        <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
+    </div>
+</div>
+ 
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" ngModel type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+  </form>
+
+
+
+  <div class="form-group">
+    <button class="btn btn-info btn-lg btn-block" ngModel type="submit" (click)="submitGoal()">SUBMIT</button>
+</div>
+
+
+  <div *ngIf="isSucceed != null">
+      <h1  *ngIf="isSucceed"> הצליח</h1>
+      <h1 *ngIf="isSucceed == false"> נכשל</h1>
+  </div>

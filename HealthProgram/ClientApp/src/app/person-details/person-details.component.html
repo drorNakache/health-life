@@ -1,0 +1,42 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Person Details</h1>
+</div>
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <label>FIRST NAME</label>
+        <input class="form-control form-control-lg" placeholder="First Name" name="privateName" ngModel
+            required >
+    </div>
+    <div class="form-group">
+        <label>LAST NAME</label>
+        <input class="form-control form-control-lg" ngModel placeholder="Last Name" name="lastName"
+            required >
+    </div>
+    <div class="form-group">
+        <label>height</label>
+        <input class="form-control form-control-lg " ngModel placeholder="height" name="height"
+           >
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>weight</label>
+        <input class="form-control form-control-lg" ngModel placeholder="weight" name="weight"
+            >
+    </div>
+        <div class="form-group col-md-6">
+            <label>DATE OF BIRTH</label>
+            <input  class="form-control form-control-lg" ngModel placeholder="DD/MM/YY" name="dateOfBirth"
+               >
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" ngModel type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+
+
+  </form>
+
+  <div *ngIf="isSucceed != null">
+      <h1  *ngIf="isSucceed"> הצליח</h1>
+      <h1 *ngIf="isSucceed == false"> נכשל</h1>
+  </div>
