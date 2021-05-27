@@ -1,0 +1,28 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">weight report
+    </h1>
+</div>
+<form novalidate autocomplete="off" #personForm="ngForm" (submit)="onSubmit(form)">
+    <div class="form-group">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>weight</label>
+        <input class="form-control form-control-lg" ngModel placeholder="weight measure" name="weightMeasure"
+            >
+    </div>
+        <div class="form-group col-md-6">
+            <label>DATE OF Measure</label>
+            <input  class="form-control form-control-lg" ngModel placeholder="DD/MM/YY" name="dateReport">
+        </div>
+    </div>
+    </div>
+    
+    <button type="submit" class="btn btn-info btn-lg btn-block" [disabled]="personForm.form.valid">Save Changes</button>
+
+
+  </form>
+
+  <div *ngIf="isSucceed != null">
+      <h1  *ngIf="isSucceed"> הצליח</h1>
+      <h1 *ngIf="isSucceed == false"> נכשל</h1>
+  </div>

@@ -57,14 +57,13 @@ public userName: Observable<string>;
     );
 
     
-
 }
 
 onBreakFastSubmit(form: NgForm){
   var food = new Food();
   food.name =  form.value["name"];
   food.calories= form.value["calories"];
-  food.Unit=  form.value["Unit"];
+  food.unit=  form.value["unit"];
 
   this.breakfast.foods.push(food);
 }
@@ -73,7 +72,7 @@ onLaunchSubmit(form: NgForm){
   var food = new Food();
   food.name =  form.value["name"];
   food.calories= form.value["calories"];
-  food.Unit=  form.value["Unit"];
+  food.unit=  form.value["unit"];
 
   this.launch.foods.push(food);
 
@@ -83,7 +82,7 @@ onDinnerSubmit(form: NgForm){
   var food = new Food();
   food.name =  form.value["name"];
   food.calories= form.value["calories"];
-  food.Unit=  form.value["Unit"];
+  food.unit=  form.value["unit"];
 
   this.dinner.foods.push(food);
 
@@ -92,14 +91,13 @@ onSnacksSubmit(form: NgForm){
   var food = new Food();
   food.name =  form.value["name"];
   food.calories= form.value["calories"];
-  food.Unit=  form.value["Unit"];
+  food.unit=  form.value["unit"];
   
   this.snacks.foods.push(food);
 
 }
 submitGoal(){
-
-  this.dailygoal=new DailyGoal(this.person.id,this.date,this.breakfast,this.launch,this.dinner,this.snacks);
+   this.dailygoal=new DailyGoal(this.person.id,this.date,this.breakfast,this.launch,this.dinner,this.snacks);
 
   this.PushDataService.postDailyGoal(this.dailygoal).subscribe(
     x=>{

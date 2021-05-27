@@ -1,4 +1,7 @@
-<p>add-daily-goal!</p>
+
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">add-daily-goal!</h1>
+</div>
 
 <div class="form-group">
     <label>Date of Goal</label>
@@ -7,120 +10,124 @@
         required >
 </div>
 
-
+<br >
   <form novalidate autocomplete="off" #form1="ngForm" (submit)="onBreakFastSubmit(form1)">
 
     <div class="form-group">
-        <label>BREAKFAST</label>
-        <label>add food</label>
-        <input class="form-control form-control-lg" ngModel placeholder="Food Name" name="name" required >
+        <div class="jumbotron py-1">
+            <h1 class="display-20 text-center">Breakfast</h1>
+        </div>     
+           <input class="form-control form-control-lg" ngModel placeholder="Food Name" name="name" required >
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
 
             <label>calories</label>
         <input class="form-control form-control-lg" ngModel placeholder="calories" name="calories">
-    
-    
-    </div>
+       </div>
+       <div class="form-group col-md-6">
+        <label>unit</label>
+    <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
 </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label>unit</label>
-        <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
-    </div>
-    </div>
+</div>
+   
 
-    <div class="form-group">
-        <button class="btn btn-info btn-lg btn-block" ngModel type="submit" [disabled]="form.invalid">Add Food</button>
+    <div>
+        <button class="btn btn-info btn-lg btn-block"  type="submit" [disabled]="form1.form.vaild">Add Food</button>
+
     </div>
 
   </form>
+  <br>
 
-  <form novalidate autocomplete="off" #form2="ngForm" (submit)="onLaunchSubmit(form2)">
+  <form novalidate autocomplete="off" #form2="ngForm" (submit)="onBreakFastSubmit(form2)">
+
     <div class="form-group">
-        <label>LAUNCH</label>
-        <label>add food</label>
-        <input class="form-control form-control-lg " ngModel placeholder="" name="height"
-           >
+        <div class="jumbotron py-1">
+            <h1 class="display-20 text-center">Launch</h1>
+        </div>          <input class="form-control form-control-lg" ngModel placeholder="Food Name" name="name" required >
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
+
             <label>calories</label>
         <input class="form-control form-control-lg" ngModel placeholder="calories" name="calories">
-    </div> 
+       </div>
+       <div class="form-group col-md-6">
+        <label>unit</label>
+    <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
+</div>
+</div>
+   
 
- </div>
+    <div >       
+         <button class="btn btn-info btn-lg btn-block"  type="submit" [disabled]="form2.form.vaild">Add Food</button>
 
 
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label>unit</label>
-        <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
     </div>
-</div>
-<div class="form-group">
-    <button class="btn btn-info btn-lg btn-block" ngModel type="submit" [disabled]="form.invalid">SUBMIT</button>
-</div>
 
   </form>
+  
+  <br>
 
-  <form novalidate autocomplete="off" #form3="ngForm" (submit)="onDinnerSubmit(form3)">
+
+  <form novalidate autocomplete="off" #form3="ngForm" (submit)="onBreakFastSubmit(form3)">
 
     <div class="form-group">
-        <label>DINNER</label>
-        <label>add food</label>
-        <input class="form-control form-control-lg " ngModel placeholder="" name="height"
-           >
+        <div class="jumbotron py-1">
+            <h1 class="display-20 text-center">Dinner</h1>
+        </div>          <input class="form-control form-control-lg" ngModel placeholder="Food Name" name="name" required >
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
+
             <label>calories</label>
         <input class="form-control form-control-lg" ngModel placeholder="calories" name="calories">
-    </div>
+       </div>
+       <div class="form-group col-md-6">
+        <label>unit</label>
+    <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
 </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label>unit</label>
-        <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
-    </div>
 </div>
-    <div class="form-group">
-        <button class="btn btn-info btn-lg btn-block" ngModel type="submit" [disabled]="form.invalid">SUBMIT</button>
-    </div>
+   
 
+<div >
+    <button class="btn btn-info btn-lg btn-block"  type="submit" [disabled]="form3.form.vaild">Add Food</button>
+
+</div>
 
   </form>
+  <br >
 
-  <form novalidate autocomplete="off" #form4="ngForm" (submit)="onSnacksSubmit(form4)">
+  
+  <form novalidate autocomplete="off" #form4="ngForm" (submit)="onBreakFastSubmit(form4)">
+
     <div class="form-group">
-        <label>SNACKS</label>
-        <label>add food</label>
-        <input class="form-control form-control-lg " ngModel placeholder="" name="height"
-           >
+        <div class="jumbotron py-1">
+            <h1 class="display-20 text-center">Snacks</h1>
+        </div>          <input class="form-control form-control-lg" ngModel placeholder="Food Name" name="name" required >
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
+
             <label>calories</label>
         <input class="form-control form-control-lg" ngModel placeholder="calories" name="calories">
-    </div>
+       </div>
+       <div class="form-group col-md-6">
+        <label>unit</label>
+    <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
 </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label>unit</label>
-        <input class="form-control form-control-lg" ngModel placeholder="unit" name="unit">
-    </div>
 </div>
- 
-    <div class="form-group">
-        <button class="btn btn-info btn-lg btn-block" ngModel type="submit" [disabled]="form.invalid">SUBMIT</button>
+   
+
+    <div >
+        <button class="btn btn-info btn-lg btn-block"  type="submit" [disabled]="form4.form.vaild">Add Food</button>
     </div>
+
   </form>
 
-
-
-  <div class="form-group">
-    <button class="btn btn-info btn-lg btn-block" ngModel type="submit" (click)="submitGoal()">SUBMIT</button>
+  <div >
+    <button class="btn btn-info btn-lg btn-block"  type="submit"   (click)="submitGoal()">SUBMIT</button>
 </div>
 
 

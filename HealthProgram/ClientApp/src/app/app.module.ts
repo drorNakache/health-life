@@ -18,6 +18,8 @@ import { PersonDetailsComponent } from './person-details/person-details.componen
 import { PushDataService } from './services/push-data.service';
 import { getBaseUrl } from 'src/main';
 import { AddDailyGoalComponent } from './add-daily-goal/add-daily-goal.component';
+import { WeightReportComponent } from './weight-report/weight-report.component';
+import { DailyEatingReportComponent } from './daily-eating-report/daily-eating-report.component';
 
 
 
@@ -27,7 +29,9 @@ import { AddDailyGoalComponent } from './add-daily-goal/add-daily-goal.component
     NavMenuComponent,
     HomeComponent,
     PersonDetailsComponent,
-    AddDailyGoalComponent
+    AddDailyGoalComponent,
+    WeightReportComponent,
+    DailyEatingReportComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,6 +42,9 @@ import { AddDailyGoalComponent } from './add-daily-goal/add-daily-goal.component
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'person-details', component:PersonDetailsComponent },
       { path: 'add-daily-goal', component:AddDailyGoalComponent },
+      { path: 'daily-eating-report', component:DailyEatingReportComponent },
+      { path: 'weight-report', component:WeightReportComponent },
+
 
 
       

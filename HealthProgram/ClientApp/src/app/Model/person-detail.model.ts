@@ -3,6 +3,6 @@ export class PersonDetail {
     lastName:string=` `;
     height:number=0;
     weight:number=0;
-    dateOfBirth:string = ` `;
+    dateOfBirth:string =``;
 
 }
