@@ -4,5 +4,5 @@ export class PersonDetail {
     height:number=0;
     weight:number=0;
     dateOfBirth:string =``;
-
+usename:string=` `;
 }

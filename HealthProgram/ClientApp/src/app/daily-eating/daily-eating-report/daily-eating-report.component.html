@@ -1,0 +1,13 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" [value]="service.formData.id" />
+    <div class="form-group">
+        <label>Date of Eaing</label>
+        <input class="form-control form-control-lg" placeholder="DD/MM/YYYY" name="eatingDate"
+            #eatingDate="ngModel" [(ngModel)]="service.formData.eatingDate"
+            required >
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" >Add report</button>
+    </div>
+</form>

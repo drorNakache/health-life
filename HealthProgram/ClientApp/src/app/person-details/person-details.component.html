@@ -1,7 +1,7 @@
 <div class="jumbotron py-3">
     <h1 class="display-4 text-center">Person Details</h1>
 </div>
-<form novalidate autocomplete="off" #personForm="ngForm" (submit)="onSubmit(form)">
+<form novalidate autocomplete="off" #personForm="ngForm"  (submit)="onSubmit(personForm)">
     <div class="form-group">
         <label>FIRST NAME</label>
         <input class="form-control form-control-lg" placeholder="First Name" name="privateName" ngModel
@@ -30,7 +30,7 @@
     </div>
     
     
-    <button type="submit" class="btn btn-info btn-lg btn-block" [disabled]="personForm.form.valid">Save Changes</button>
+    <button type="submit" class="btn btn-info btn-lg btn-block" >Save Changes</button>
 
 
   </form>

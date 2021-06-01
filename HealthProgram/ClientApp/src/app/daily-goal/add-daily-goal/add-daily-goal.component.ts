@@ -1,17 +1,15 @@
 import { async } from '@angular/core/testing';
-import { PushDataService } from '../services/push-data.service';
-import { Component, OnInit } from '@angular/core';
-import { DailyGoal } from '../Model/daily-goal.model';
-import { NgForm } from '@angular/forms';
-import { Food } from '../Model/food.model';
-import { Meal } from '../Model/meal.model';
-import { AuthorizeService } from 'src/api-authorization/authorize.service';
-import { User } from '../Model/User';
-import { Observable } from 'rxjs';
+ import { Component, OnInit } from '@angular/core';
+ import { NgForm } from '@angular/forms';
+ import { AuthorizeService } from 'src/api-authorization/authorize.service';
+ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { FetchDataService } from '../services/fetch-data.service';
-import { Person } from '../Model/person.model';
-
+import { DailyGoal } from 'src/app/Model/daily-goal.model';
+import { Meal } from 'src/app/Model/meal.model';
+import { Person } from 'src/app/Model/person.model';
+import { FetchDataService } from 'src/app/services/fetch-data.service';
+ import {PushDataService } from 'src/app/services/push-data.service';
+import { Food } from 'src/app/Model/food.model';
 @Component({
   selector: 'app-add-daily-goal',
   templateUrl: './add-daily-goal.component.html',
@@ -40,21 +38,20 @@ public userName: Observable<string>;
 
   ngOnInit() {
 
-    let id ="";
     this.userName = this.userMangment.getUser().pipe(map(u => u && u.name));
     this.userName.subscribe(x=>{
 
-      id = x;
+      this.featchData.getPerson(x).subscribe(
+        y=>{
+          this.person = y;
+        }
+        ,
+        err=>{
+          
+        }
+      );
     })
-    this.featchData.getPerson(id).subscribe(
-      x=>{
-        this.person = x;
-      }
-      ,
-      err=>{
-        
-      }
-    );
+ 
 
     
 }
