@@ -54,18 +54,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'person-details', component:PersonDetailsComponent },
-      { path: 'eat-goal', component:EatGoalComponent },
-      { path: 'dashboard', component:DashboardComponent },
-      { path: 'weight-report', component:WeightReportComponent },
-      { path: 'eat-details', component:EatDetailsComponent },
-
-
-
-      
-     // { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-    ])
+    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: 'person-details', component: PersonDetailsComponent },
+    { path: 'eat-goal', component: EatGoalComponent },
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'weight-report', component: WeightReportComponent },
+    { path: 'eat-details', component: EatDetailsComponent },
+    // { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
+], { relativeLinkResolution: 'legacy' })
   ],
   providers: [
     PushDataService,

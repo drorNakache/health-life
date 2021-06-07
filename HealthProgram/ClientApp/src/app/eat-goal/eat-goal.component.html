@@ -1,0 +1,35 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Goal Register</h1>
+</div>
+<div class="row">
+    <div class="col-md-5">
+        <app-eat-goal-form></app-eat-goal-form>
+    </div>
+    <div class="col-md-7">
+        <div>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Date</th>
+                        <th>Meal type</th>
+                        <th>Food name</th>
+                        <th>calories</th>
+                        <th>unit</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let pd of service.list">
+                    <td (click)="populateForm(pd)">{{pd.eatDate}}</td>
+                    <td (click)="populateForm(pd)">{{convartMealName(pd.mealType)}}</td>
+                    <td (click)="populateForm(pd)">{{pd.foodName}}</td>
+                    <td (click)="populateForm(pd)">{{pd.calories}}</td>
+                    <td (click)="populateForm(pd)">{{pd.unit}}</td>
+
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.id)"></i>
+                      </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

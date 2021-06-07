@@ -1,4 +1,4 @@
-import { async } from '@angular/core/testing';
+import { waitForAsync } from '@angular/core/testing';
  import { Component, OnInit } from '@angular/core';
  import { NgForm } from '@angular/forms';
  import { AuthorizeService } from 'src/api-authorization/authorize.service';

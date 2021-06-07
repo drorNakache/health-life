@@ -1,0 +1,46 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" [value]="service.formData.id" />
+
+    <div class="form-group">
+        <label>Goal Date1</label>
+        <input class="form-control form-control-lg" type="date" placeholder="DD/MM/YYYY" name="eatDate"
+            #eatDate="ngModel" [(ngModel)]="service.formData.eatDate"
+            required maxlength="10" minlength="10" [class.invalid]="eatDate.invalid &#038;&#038; eatDate.touched">
+    </div>
+    <br >
+
+    <label for="mealTypeSelect"> Meal select: </label><br>
+   <select class="form-control" name="mealTypeSelect" [(ngModel)]="mealTypeString" >
+      <option value="0">Breakfast</option>
+      <option value="1">Launch</option>
+      <option value="2">Dinner</option>
+      <option value="3">Snacks</option>
+    </select>
+    <br>
+    <div class="form-group">
+        <label>food Name</label>
+        <input class="form-control form-control-lg" placeholder="Food Name" name="foodName"
+            #foodName="ngModel" [(ngModel)]="service.formData.foodName"
+            required [class.invalid]="foodName.invalid &#038;&#038; foodName.touched">
+    </div>
+  
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>calories</label>
+            <input  class="form-control form-control-lg" placeholder="calories" name="calories"
+                #calories="ngModel" [(ngModel)]="service.formData.calories"
+                required maxlength="10" minlength="1" [class.invalid]="calories.invalid &#038;&#038; calories.touched">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>unit</label>
+            <input  class="form-control form-control-lg" placeholder="unit" name="unit"
+                #unit="ngModel" [(ngModel)]="service.formData.unit"
+                required maxlength="10" minlength="1" [class.invalid]="unit.invalid &#038;&#038; unit.touched">
+        </div>
+        
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>
