@@ -15,14 +15,18 @@
                     <th>food name</th>
                     <th>calories</th>
                    <th>unit</th>
+                   <th>delete</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let pd of service.list">
-                    <td (click)="populateForm(pd)">{{pd.eatingDate}}</td>
-                    
+                <tr  *ngFor="let pd of service.list">
+                    <td >{{pd.eatingDate}}</td>
+                    <td >{{convartMealName(pd.mealType)}}</td>
+                    <td>{{pd.foodsReport}}</td>
+                    <td></td>
+                    <td></td>
                     <td>
-                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.id)"></i>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.id)">x</i>
                     </td>
                 </tr>
             </tbody>

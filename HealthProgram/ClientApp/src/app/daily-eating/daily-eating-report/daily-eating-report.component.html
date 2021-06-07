@@ -2,10 +2,27 @@
     <input type="hidden" name="id" [value]="service.formData.id" />
     <div class="form-group">
         <label>Date of Eaing</label>
-        <input class="form-control form-control-lg" placeholder="DD/MM/YYYY" name="eatingDate"
+        <input class="form-control form-control-lg" type="date" placeholder="DD/MM/YYYY" name="eatingDate"
             #eatingDate="ngModel" [(ngModel)]="service.formData.eatingDate"
             required >
     </div>
+    <br >
+
+            <label for="mealTypeSelect"> Meal select: </label><br>
+           <select class="form-control" name="mealTypeSelect" [(ngModel)]="mealTypeString" >
+              <option value="0">Breakfast</option>
+              <option value="1">Launch</option>
+              <option value="2">Dinner</option>
+              <option value="3">Snacks</option>
+            </select>
+            <br>
+            <div class="form-group">
+                <label>Food NAME</label>
+                <input class="form-control form-control-lg"  placeholder="food name" name="foodsReport"
+                    #foodsReport="ngModel" [(ngModel)]="service.formData.foodsReport.name"
+                    required >
+            </div>
+   <br >
 
     <div class="form-group">
         <button class="btn btn-info btn-lg btn-block" type="submit" >Add report</button>

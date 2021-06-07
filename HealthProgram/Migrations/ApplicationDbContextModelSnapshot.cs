@@ -122,6 +122,66 @@ namespace HealthProgram.Migrations
                     b.ToTable("DailyGoal");
                 });
 
+            modelBuilder.Entity("HealthProgram.Models.EatDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float>("Calories")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("EatDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FoodName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MealType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.Property<float>("Unit")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EatDetail");
+                });
+
+            modelBuilder.Entity("HealthProgram.Models.EatGoal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float>("Calories")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("EatDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FoodName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MealType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.Property<float>("Unit")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EatGoal");
+                });
+
             modelBuilder.Entity("HealthProgram.Models.EatingReport", b =>
                 {
                     b.Property<int>("Id")

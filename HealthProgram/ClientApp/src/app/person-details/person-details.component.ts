@@ -35,7 +35,7 @@ export class PersonDetailsComponent implements OnInit {
       this.person.height = form.value["height"];
       this.person.weight = form.value["weight"];
       this.person.dateOfBirth = form.value["dateOfBirth"];
-      this.person.usename = x;
+      this.person.username = x;
   
       this.PushDataService.postPersonDetail(this.person).subscribe(
       x=>{

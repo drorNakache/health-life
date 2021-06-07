@@ -22,6 +22,11 @@ import { WeightReportComponent } from './weight-report/weight-report.component';
 import { DailyEatingReportComponent } from  './daily-eating/daily-eating-report/daily-eating-report.component';
 import { DailyGoalComponent } from './daily-goal/daily-goal.component';
 import { DailyEatingComponent } from './daily-eating/daily-eating.component';
+import { EatDetailsComponent } from './eat-details/eat-details.component';
+import { EatDetailFormComponent } from './eat-details/eat-detail-form/eat-detail-form.component';
+import { EatGoalComponent } from './eat-goal/eat-goal.component';
+import { EatGoalFormComponent } from './eat-goal/eat-goal-form/eat-goal-form.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -36,7 +41,12 @@ import { DailyEatingComponent } from './daily-eating/daily-eating.component';
     DailyEatingReportComponent,
     DailyEatingComponent
     ,
-    DailyGoalComponent
+    DailyGoalComponent,
+    EatDetailsComponent,
+    EatDetailFormComponent,
+    EatGoalComponent,
+    EatGoalFormComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,9 +56,10 @@ import { DailyEatingComponent } from './daily-eating/daily-eating.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'person-details', component:PersonDetailsComponent },
-      { path: 'add-daily-goal', component:AddDailyGoalComponent },
-      { path: 'daily-eating', component:DailyEatingComponent },
+      { path: 'eat-goal', component:EatGoalComponent },
+      { path: 'dashboard', component:DashboardComponent },
       { path: 'weight-report', component:WeightReportComponent },
+      { path: 'eat-details', component:EatDetailsComponent },
 
 
 

@@ -18,7 +18,8 @@ namespace HealthProgram.Data
         {
 
         }
-
+        public DbSet<EatDetail> EatDetail { get; set; }
+        public DbSet<EatGoal> EatGoal { get; set; }
         public DbSet<DailyGoal> DailyGoal { get; set; }
         public DbSet<Person> Person { get; set; }
         public DbSet<EatingReport> EatingReport { get; set; }

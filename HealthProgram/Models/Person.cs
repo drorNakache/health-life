@@ -13,13 +13,14 @@ namespace HealthProgram.Models
         {
 
         }
-        public Person( string privateName, string lastName, double height, double weight, string dateOfBirth)
+        public Person(string privateName, string lastName, double height, double weight, string dateOfBirth, string username = null)
         {
             PrivateName = privateName;
             LastName = lastName;
             Height = height;
             Weight = weight;
             DateOfBirth = dateOfBirth;
+            Username = username;
         }
 
         [Key]

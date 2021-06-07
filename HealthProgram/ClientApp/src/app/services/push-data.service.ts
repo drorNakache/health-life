@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { PersonDetail } from '../Model/person-detail.model';
 import { DailyGoal } from '../Model/daily-goal.model';
+import { WeightReport } from '../Model/weight-report.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,14 @@ export class PushDataService {
 
     return this.http.post(`${this.baseUrl}${"Person/create"}`,data,{'headers':headers_});
   }
+  postWeightReport(weightReport:WeightReport):Observable<any> {
 
+    const headers_ = {'Content-Type': 'application/json'};
+    const data = JSON.stringify(weightReport);
+
+
+    return this.http.post(`${this.baseUrl}${"PersonWeightReport/create"}`,data,{'headers':headers_});
+  }
   
   postDailyGoal(dailygoal:DailyGoal):Observable<any> {
 

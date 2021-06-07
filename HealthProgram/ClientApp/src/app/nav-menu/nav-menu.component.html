@@ -32,17 +32,22 @@
               >Personal-Data</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/add-daily-goal']"
+            <a class="nav-link text-dark" [routerLink]="['/eat-goal']"
               >New-Goal</a >
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/daily-eating']"
-            >Eating-Report</a >
+            <a class="nav-link text-dark" [routerLink]="['/dashboard']"
+            >Dashboard</a >
+          </li>
 
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/weight-report']"
               >Weight-Report</a
             >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/eat-details']"
+              >Eat-Details</a >
           </li>
         </ul>
         <app-login-menu></app-login-menu>

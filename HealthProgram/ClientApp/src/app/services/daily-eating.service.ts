@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { EatingReport } from '../Model/eating-report.model';
 
 @Injectable({
@@ -7,14 +7,18 @@ import { EatingReport } from '../Model/eating-report.model';
 })
 export class DailyEatingService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    @Inject('URL_API') private baseUrl:string) { }
 
-  readonly baseURL = 'http://localhost:44367/api/EatingReports'
-  formData: EatingReport = new EatingReport();
+  readonly baseURL = this.baseUrl + 'api/EatingReports';
+
+  public formData: EatingReport = new EatingReport();
+
   list: EatingReport[];
 
   postEatingReport() {
-    return this.http.post(this.baseURL, this.formData);
+    const headers_ = {'Content-Type': 'application/json'};
+    return this.http.post(this.baseURL, this.formData,{'headers':headers_});
   }
 
   putEatingReport() {

@@ -2,7 +2,7 @@
     <h1 class="display-4 text-center">weight report
     </h1>
 </div>
-<form novalidate autocomplete="off" #personForm="ngForm" (submit)="onSubmit(form)">
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
     <div class="form-group">
     <div class="form-row">
         <div class="form-group col-md-6">
@@ -12,12 +12,13 @@
     </div>
         <div class="form-group col-md-6">
             <label>DATE OF Measure</label>
-            <input  class="form-control form-control-lg" ngModel placeholder="DD/MM/YY" name="dateReport">
+            <input  class="form-control form-control-lg" type="date" ngModel placeholder="DD/MM/YY" name="dateReport">
         </div>
     </div>
+
     </div>
     
-    <button type="submit" class="btn btn-info btn-lg btn-block" [disabled]="personForm.form.valid">Save Changes</button>
+    <button type="submit" class="btn btn-info btn-lg btn-block" >Save Changes</button>
 
 
   </form>

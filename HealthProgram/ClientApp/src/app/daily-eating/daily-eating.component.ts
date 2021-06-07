@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EatingReport } from '../Model/eating-report.model';
+import { MealType } from '../Model/meal-type.model';
 import { DailyEatingService } from '../services/daily-eating.service';
 
 @Component({
@@ -30,6 +31,23 @@ export class DailyEatingComponent implements OnInit {
           err => { console.log(err) }
         )
     }
+  }
+
+  convartMealName(m:MealType)
+  {
+    switch (m)
+    { 
+      case MealType.BreakFast:
+        return "Breakfast";
+      case MealType.Luanch:
+       return "Luanch";
+
+      default:
+         return "";
+
+    }
+
+
   }
 
 }
