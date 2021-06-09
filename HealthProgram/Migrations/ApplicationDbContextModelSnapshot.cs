@@ -103,8 +103,8 @@ namespace HealthProgram.Migrations
                     b.Property<int?>("LaunchId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SnacksId")
                         .HasColumnType("int");
@@ -141,8 +141,8 @@ namespace HealthProgram.Migrations
                     b.Property<int>("MealType")
                         .HasColumnType("int");
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Unit")
                         .HasColumnType("real");
@@ -171,8 +171,8 @@ namespace HealthProgram.Migrations
                     b.Property<int>("MealType")
                         .HasColumnType("int");
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Unit")
                         .HasColumnType("real");
@@ -198,8 +198,8 @@ namespace HealthProgram.Migrations
                     b.Property<int>("MealType")
                         .HasColumnType("int");
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ReportDate")
                         .HasColumnType("datetime2");
@@ -277,10 +277,10 @@ namespace HealthProgram.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PrivateName")
+                    b.Property<string>("PersonId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("PrivateName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Weight")
@@ -301,8 +301,8 @@ namespace HealthProgram.Migrations
                     b.Property<DateTime>("DateReport")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("WeightMeasure")
                         .HasColumnType("decimal(18,2)");

@@ -13,7 +13,7 @@ namespace HealthProgram.Models
         [Key]
         public int Id { get; set; }
         [ForeignKey("Person")]
-        public int PersonId { get; set; }
+        public string PersonId { get; set; }
 
         public DateTime CurrentDate { get; set; }
 

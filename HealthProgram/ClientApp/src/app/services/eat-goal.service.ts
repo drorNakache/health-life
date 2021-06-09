@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { EatDetail } from '../Model/eat-detail.model';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { EatDetail } from '../Model/eat-detail.model';
 export class EatGoalService {
 
   formData: EatDetail= new EatDetail();
-  list : EatDetail[];
+  list : EatDetail[] ;
 
 
   constructor(private http: HttpClient,
@@ -17,8 +18,11 @@ export class EatGoalService {
     readonly baseURL = this.baseUrl + 'api/EatGoal';
 
 
-    postEatDetail() {
+    postEatDetail(_username:string) {
+
+      this.formData.personId = _username;
       return this.http.post(this.baseURL, this.formData);
+
     }
     putEatDetail() {
       return this.http.put(`${this.baseURL}/${this.formData.id}`, this.formData);
@@ -27,6 +31,10 @@ export class EatGoalService {
       return this.http.delete(`${this.baseURL}/${id}`);
     }
   
+    getList(_username:string):Observable<any>{
+      return this.http.get(`${this.baseURL +'/GetAll'}/${123}`);
+    }
+
     refreshList() {
       this.http.get(this.baseURL)
         .toPromise()

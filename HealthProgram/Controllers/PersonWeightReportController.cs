@@ -22,7 +22,7 @@ namespace HealthProgram.Controllers
 
         // GET: list of person goals. how i get id from body or url
         [HttpGet("GetAll")]
-        public IActionResult GetAll(int ID)
+        public IActionResult GetAll(string ID)
         {
             try
             {

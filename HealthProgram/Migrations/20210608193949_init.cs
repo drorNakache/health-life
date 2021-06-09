@@ -66,13 +66,49 @@ namespace HealthProgram.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EatDetail",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PersonId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FoodName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MealType = table.Column<int>(type: "int", nullable: false),
+                    EatDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Calories = table.Column<float>(type: "real", nullable: false),
+                    Unit = table.Column<float>(type: "real", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EatDetail", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EatGoal",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PersonId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FoodName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MealType = table.Column<int>(type: "int", nullable: false),
+                    EatDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Calories = table.Column<float>(type: "real", nullable: false),
+                    Unit = table.Column<float>(type: "real", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EatGoal", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "EatingReport",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DailyGoalId = table.Column<int>(type: "int", nullable: false),
-                    PersonId = table.Column<int>(type: "int", nullable: false),
+                    PersonId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EatingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReportDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MealType = table.Column<int>(type: "int", nullable: false)
@@ -121,11 +157,12 @@ namespace HealthProgram.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    PersonId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PrivateName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Height = table.Column<double>(type: "float", nullable: false),
                     Weight = table.Column<double>(type: "float", nullable: false),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DateOfBirth = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -138,7 +175,7 @@ namespace HealthProgram.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PersonId = table.Column<int>(type: "int", nullable: false),
+                    PersonId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DateReport = table.Column<DateTime>(type: "datetime2", nullable: false),
                     WeightMeasure = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
@@ -259,7 +296,7 @@ namespace HealthProgram.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PersonId = table.Column<int>(type: "int", nullable: false),
+                    PersonId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CurrentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BreakFastId = table.Column<int>(type: "int", nullable: true),
                     LaunchId = table.Column<int>(type: "int", nullable: true),
@@ -444,6 +481,12 @@ namespace HealthProgram.Migrations
 
             migrationBuilder.DropTable(
                 name: "DeviceCodes");
+
+            migrationBuilder.DropTable(
+                name: "EatDetail");
+
+            migrationBuilder.DropTable(
+                name: "EatGoal");
 
             migrationBuilder.DropTable(
                 name: "Food");

@@ -22,10 +22,11 @@ namespace HealthProgram.Controllers
         }
 
         // GET: api/EatGoal
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<EatGoal>>> GetEatGoal()
+        [HttpGet("/GetAll")]
+        [Route("{personId}")]
+        public async Task<ActionResult<IEnumerable<EatGoal>>> GetEatGoal(string personId)
         {
-            return await _context.EatGoal.ToListAsync();
+            return (_context.Set<EatGoal>().Where(x => x.PersonId == personId).ToListAsync()).Result ;
         }
 
         // GET: api/EatGoal/5

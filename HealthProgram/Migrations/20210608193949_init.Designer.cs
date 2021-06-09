@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthProgram.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210531122257_dailyEatingControler")]
-    partial class dailyEatingControler
+    [Migration("20210608193949_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -105,8 +105,8 @@ namespace HealthProgram.Migrations
                     b.Property<int?>("LaunchId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SnacksId")
                         .HasColumnType("int");
@@ -122,6 +122,66 @@ namespace HealthProgram.Migrations
                     b.HasIndex("SnacksId");
 
                     b.ToTable("DailyGoal");
+                });
+
+            modelBuilder.Entity("HealthProgram.Models.EatDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float>("Calories")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("EatDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FoodName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MealType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Unit")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EatDetail");
+                });
+
+            modelBuilder.Entity("HealthProgram.Models.EatGoal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float>("Calories")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("EatDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FoodName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MealType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Unit")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EatGoal");
                 });
 
             modelBuilder.Entity("HealthProgram.Models.EatingReport", b =>
@@ -140,8 +200,8 @@ namespace HealthProgram.Migrations
                     b.Property<int>("MealType")
                         .HasColumnType("int");
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ReportDate")
                         .HasColumnType("datetime2");
@@ -219,10 +279,10 @@ namespace HealthProgram.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PrivateName")
+                    b.Property<string>("PersonId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("PrivateName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Weight")
@@ -243,8 +303,8 @@ namespace HealthProgram.Migrations
                     b.Property<DateTime>("DateReport")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PersonId")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("WeightMeasure")
                         .HasColumnType("decimal(18,2)");

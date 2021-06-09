@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { map } from 'rxjs/operators';
+import { AuthorizeService } from 'src/api-authorization/authorize.service';
 import { EatDetail } from 'src/app/Model/eat-detail.model';
 import { MealType } from 'src/app/Model/meal-type.model';
 import { EatGoalService } from 'src/app/services/eat-goal.service';
@@ -13,7 +15,7 @@ export class EatGoalFormComponent implements OnInit {
 
 
 
-  constructor(public service:EatGoalService) { }
+  constructor(public service:EatGoalService,private userMangment:AuthorizeService) { }
   mealType:MealType;
   mealTypeString:string;
   ngOnInit() {
@@ -61,13 +63,25 @@ export class EatGoalFormComponent implements OnInit {
   }
   
   insertRecord(form: NgForm) {
-    this.service.postEatDetail().subscribe(
-      res => {
-        this.resetForm(form);
-        this.service.refreshList();
-      },
-      err => { console.log(err); }
-    )
+
+    this.userMangment.getUser().pipe(map(u => u && u.name)).subscribe(
+      x=>{
+
+        this.service.postEatDetail(x).subscribe(
+          res => {
+            this.resetForm(form);
+            this.service.refreshList();
+          },
+          err => { console.log(err); }
+        )
+
+      }
+      
+      );
+
+   
+
+
   }
 
 

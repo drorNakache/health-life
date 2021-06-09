@@ -14,7 +14,7 @@ namespace HealthProgram.Models
         public int Id { get; set; }
 
         [ForeignKey("Person")]
-        public int PersonId { get; set; }
+        public string PersonId { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime DateReport { get; set; }

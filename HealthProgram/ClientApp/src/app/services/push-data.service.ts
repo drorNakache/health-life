@@ -22,7 +22,7 @@ export class PushDataService {
 
     return this.http.post(`${this.baseUrl}${"Person/create"}`,data,{'headers':headers_});
   }
-  postWeightReport(weightReport:WeightReport):Observable<any> {
+  postWeightReport(weightReport:WeightReport, username:string):Observable<any> {
 
     const headers_ = {'Content-Type': 'application/json'};
     const data = JSON.stringify(weightReport);

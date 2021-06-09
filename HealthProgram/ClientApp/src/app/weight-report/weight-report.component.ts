@@ -26,25 +26,43 @@ export class WeightReportComponent implements OnInit {
 
   }
   ngOnInit() {
+
+    this.userMangment.getUser().pipe(map(u => u && u.name)).subscribe(
+      x=>{
+
+      this._FetchDataService.getPerson(x).subscribe(
+        y=>{ 
+
+        },
+        err=>{ 
+
+        }
+
+      );
+
+    },
+    err=>{ 
+
+    }
+    );
+     
+
+    
+ 
+
   }
+
+
   public onSubmit(form: NgForm)
   {
     this.userMangment.getUser().pipe(map(u => u && u.name)).subscribe(x=>{
       this.weightReport.WeightMeasure = form.value["weightMeasure"];
       this.weightReport.dateReport = form.value["dateReport"];
     
-  this._FetchDataService.getPerson(x).subscribe(
-    p=>{
-alert("person")
-this.weightReport.personId=p.Id;
-},
-
-    err=>{
-alert("error")    } 
- );
+  
 
 
-      this.PushDataService.postWeightReport(this.weightReport).subscribe(
+      this.PushDataService.postWeightReport(this.weightReport,x).subscribe(
       x=>{
         this.isSucceed = true;
       },

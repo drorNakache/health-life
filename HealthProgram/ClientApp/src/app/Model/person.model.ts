@@ -1,5 +1,5 @@
 export class Person {
-    id:number=0;
+        id:number=0;
         privateName:string=` `;
         lastName:string=` `;
         height:number=0;

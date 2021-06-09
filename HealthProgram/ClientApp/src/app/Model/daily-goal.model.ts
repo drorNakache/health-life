@@ -10,7 +10,7 @@ export class DailyGoal {
         this.snacks = snacks;
 this.personId= personId;
     }
-personId:number;
+personId:string;
     currentDate:Date = new Date();
     breakFast:Meal;
     launch:Meal;

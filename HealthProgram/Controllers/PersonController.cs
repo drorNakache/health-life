@@ -26,7 +26,7 @@ namespace HealthProgram.Controllers
         {
             try
             {
-                var result = _dbContext.Set<Person>().FirstOrDefault(x => x.Username == ID);
+                var result = _dbContext.Set<Person>().FirstOrDefault(x => x.PersonId == ID);
                 return Ok(result);
                 
             }

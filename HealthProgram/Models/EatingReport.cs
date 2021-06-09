@@ -15,7 +15,7 @@ namespace HealthProgram.Models
         public int DailyGoalId { get; set; }
 
         [ForeignKey("Person")]
-        public int PersonId { get; set; }
+        public string PersonId { get; set; }
 
         public DateTime EatingDate { get; set; }
         public DateTime ReportDate { get; set; }

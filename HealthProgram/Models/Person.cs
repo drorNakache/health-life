@@ -20,13 +20,13 @@ namespace HealthProgram.Models
             Height = height;
             Weight = weight;
             DateOfBirth = dateOfBirth;
-            Username = username;
+            PersonId = username;
         }
 
         [Key]
         public int Id { get; set; }
         [ForeignKey("ApplicationUser")]
-        public string Username { get; set; }
+        public string PersonId { get; set; }
         public string PrivateName { get; set; }
         public string LastName { get; set; }
 
