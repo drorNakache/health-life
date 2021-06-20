@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { EatDetail } from '../Model/eat-detail.model';
 
 @Injectable({
@@ -27,6 +28,10 @@ export class EatDetailService {
       return this.http.delete(`${this.baseURL}/${id}`);
     }
   
+    getEatList(_username:string):Observable<any>{
+      return this.http.get(this.baseURL);
+    } 
+
     refreshList() {
       this.http.get(this.baseURL)
         .toPromise()

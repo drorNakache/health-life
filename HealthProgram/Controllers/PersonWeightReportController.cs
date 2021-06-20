@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static HealthProgram.MLModel;
 
 namespace HealthProgram.Controllers
 {
@@ -19,6 +20,16 @@ namespace HealthProgram.Controllers
             _dbContext = applicationDbContext;
 
         }
+
+        [HttpPost]
+        [Route("ml")]
+
+        public IActionResult getML([FromBody] ModelInput modelInput)
+        {
+            var result = Predict(modelInput);
+            return Ok(result.Score);
+        }
+
 
         // GET: list of person goals. how i get id from body or url
         [HttpGet("GetAll")]
@@ -54,7 +65,7 @@ namespace HealthProgram.Controllers
 
         // POST  WeightReport/
         [HttpPost]
-
+        [Route ("Create")]
         public IActionResult Create([FromBody] WeightReport WeightReport)
         {
             try

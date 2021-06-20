@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -27,6 +27,10 @@ import { EatDetailFormComponent } from './eat-details/eat-detail-form/eat-detail
 import { EatGoalComponent } from './eat-goal/eat-goal.component';
 import { EatGoalFormComponent } from './eat-goal/eat-goal-form/eat-goal-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FoodListComponent } from './food-list/food-list.component';
+import { Ng2CompleterModule } from 'ng2-completer';
+import { ChartDashboardComponent } from './chart-dashboard/chart-dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -39,19 +43,23 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AddDailyGoalComponent,
     WeightReportComponent,
     DailyEatingReportComponent,
-    DailyEatingComponent
-    ,
+    DailyEatingComponent,
     DailyGoalComponent,
     EatDetailsComponent,
     EatDetailFormComponent,
     EatGoalComponent,
     EatGoalFormComponent,
-    DashboardComponent
+    DashboardComponent,
+    FoodListComponent,
+    ChartDashboardComponent, 
+  
+    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    Ng2CompleterModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
     { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -60,8 +68,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     { path: 'dashboard', component: DashboardComponent },
     { path: 'weight-report', component: WeightReportComponent },
     { path: 'eat-details', component: EatDetailsComponent },
+    { path: 'food-list', component: FoodListComponent },
+
     // { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-], { relativeLinkResolution: 'legacy' })
+], { relativeLinkResolution: 'legacy' }),
+    BrowserAnimationsModule
   ],
   providers: [
     PushDataService,

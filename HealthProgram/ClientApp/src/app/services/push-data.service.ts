@@ -1,3 +1,4 @@
+import { MLModel } from './../Model/MLModel';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
@@ -22,13 +23,21 @@ export class PushDataService {
 
     return this.http.post(`${this.baseUrl}${"Person/create"}`,data,{'headers':headers_});
   }
-  postWeightReport(weightReport:WeightReport, username:string):Observable<any> {
+  postWeightReport(weightReport:WeightReport):Observable<any> {
 
     const headers_ = {'Content-Type': 'application/json'};
     const data = JSON.stringify(weightReport);
 
 
-    return this.http.post(`${this.baseUrl}${"PersonWeightReport/create"}`,data,{'headers':headers_});
+    return this.http.post(`${this.baseUrl}${"PersonWeightReport/Create"}`,data,{'headers':headers_});
+  }
+
+  postML(mlModel:MLModel):Observable<any>{
+    const headers_ = {'Content-Type': 'application/json'};
+    const data = JSON.stringify(mlModel);
+
+    return this.http.post(`${this.baseUrl}${"PersonWeightReport/ml"}`,data,{'headers':headers_});
+
   }
   
   postDailyGoal(dailygoal:DailyGoal):Observable<any> {

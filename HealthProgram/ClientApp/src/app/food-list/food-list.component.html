@@ -1,0 +1,43 @@
+
+  <div class="jumbotron py-3">
+    <h1 class="display-4 text-center">FOOD LIST</h1>
+</div>
+<div class="">
+    
+    <div class=" ">
+        <div>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                          <h4> Third Way: Using NG2-Completer</h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          User ID with dynamic data:
+                        </td>
+                        <td>
+                          <ng2-completer [(ngModel)]="searchStr" [datasource]="dataService" [minSearchLength]="1"></ng2-completer>
+                        </td>
+                    </tr>
+                    <tr>
+                       
+                        <th>Food name  |</th>
+                        <th class=""></th>
+                        <th class=""></th>
+                         <th>food nutrients</th>
+                       <th class=""></th>
+                       <th class=""></th>
+                      
+                    </tr>
+                </thead>
+                <tr *ngFor="let food of foodList">
+                    <td >{{food.description}}</td>
+                    <td *ngFor="let nut of food.foodNutrients">{{nut.name}}={{nut.amount}}:{{nut.unitName}}</td>
+                                        
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,8 +1,11 @@
 import { EatDetailService } from './../../services/eat-detail.service';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { EatDetail } from 'src/app/Model/eat-detail.model';
 import { MealType } from 'src/app/Model/meal-type.model';
+import { ApiService } from 'src/app/services/api.service';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-eat-detail-form',
@@ -10,11 +13,27 @@ import { MealType } from 'src/app/Model/meal-type.model';
   styles: []
 })
 export class EatDetailFormComponent implements OnInit {
+  formControl = new FormControl();
+  autoFilter: Observable<string[]>;
+  Items: string[] = ['BoJack Horseman', 'Stranger Things', 'Ozark', 'Big Mouth'];
 
-  constructor(public service:EatDetailService) { }
+  constructor(public service:EatDetailService,private apiService: ApiService) { }
   mealType:MealType;
   mealTypeString:string;
+  mySelect = '2';
+  selectedValue: any;
+  foodList;
+  
   ngOnInit() {
+
+    this.apiService.getFoodList().subscribe((data)=>{
+      alert("geting new data from FOOD-API...");
+      this.foodList = data;
+      
+    });
+
+  
+
   }
   onSubmit(form: NgForm) {
 
@@ -45,6 +64,8 @@ export class EatDetailFormComponent implements OnInit {
     else
       this.updateRecord(form);
   }
+
+  
   
   updateRecord(form: NgForm) {
     this.service.putEatDetail().subscribe(
@@ -74,5 +95,22 @@ export class EatDetailFormComponent implements OnInit {
     form.form.reset();
     this.service.formData = new EatDetail();
   }
+  getDropDownText(fdcId, object){
+/*     const selObj = _.filter(object, function (o) {
+        return (_.includes(id,o.id));
+    });
+    return selObj; */
+
+return alert(fdcId);
+
+
+
+  }
+  selectChange() {
+    this.selectedValue = this.getDropDownText(this.mySelect, this.foodList)[0].description;
+}
+
+
+
 
 }

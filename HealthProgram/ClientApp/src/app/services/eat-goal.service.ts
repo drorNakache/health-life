@@ -10,7 +10,7 @@ export class EatGoalService {
 
   formData: EatDetail= new EatDetail();
   list : EatDetail[] ;
-
+  listOfUser : EatDetail[] ;
 
   constructor(private http: HttpClient,
     @Inject('URL_API') private baseUrl:string) { }
@@ -32,12 +32,14 @@ export class EatGoalService {
     }
   
     getList(_username:string):Observable<any>{
-      return this.http.get(`${this.baseURL +'/GetAll'}/${123}`);
-    }
+      return this.http.get(this.baseURL);
+    } 
 
     refreshList() {
       this.http.get(this.baseURL)
         .toPromise()
         .then(res =>this.list = res as EatDetail[]);
     }
+
+
 }

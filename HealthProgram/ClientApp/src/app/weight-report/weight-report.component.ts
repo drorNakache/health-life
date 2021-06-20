@@ -10,6 +10,8 @@ import { map } from 'rxjs/internal/operators/map';
 @Component({
   selector: 'app-weight-report',
   templateUrl: './weight-report.component.html',
+
+  
   styleUrls: ['./weight-report.component.css']
 })
 export class WeightReportComponent implements OnInit {
@@ -45,10 +47,6 @@ export class WeightReportComponent implements OnInit {
 
     }
     );
-     
-
-    
- 
 
   }
 
@@ -56,13 +54,14 @@ export class WeightReportComponent implements OnInit {
   public onSubmit(form: NgForm)
   {
     this.userMangment.getUser().pipe(map(u => u && u.name)).subscribe(x=>{
-      this.weightReport.WeightMeasure = form.value["weightMeasure"];
+      this.weightReport.weightMeasure = form.value["weightMeasure"];
       this.weightReport.dateReport = form.value["dateReport"];
+      this.weightReport.personId = x;
     
   
 
 
-      this.PushDataService.postWeightReport(this.weightReport,x).subscribe(
+      this.PushDataService.postWeightReport(this.weightReport).subscribe(
       x=>{
         this.isSucceed = true;
       },

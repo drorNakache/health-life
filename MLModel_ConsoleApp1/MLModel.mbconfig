@@ -1,0 +1,258 @@
+﻿{
+  "TrainingConfigurationVersion": 0,
+  "TrainingTime": 15,
+  "Scenario": {
+    "ScenarioType": "Regression"
+  },
+  "DataSource": {
+    "DataSourceType": "TabularFile",
+    "FilePath": "C:\\dror\\Downloads\\weight-change.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "calories eat change",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "calorie for KG",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "weekly weight change",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      }
+    ]
+  },
+  "Environment": {
+    "EnvironmentType": "LocalCPU"
+  },
+  "RunHistory": {
+    "Trials": [
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98604796108161241,
+        "RuntimeInSeconds": 0.35499998927116394
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98597762828662849,
+        "RuntimeInSeconds": 0.28499999642372131
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98592588021206107,
+        "RuntimeInSeconds": 0.44699999690055847
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98592588021206107,
+        "RuntimeInSeconds": 0.40799999237060547
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98591462262919494,
+        "RuntimeInSeconds": 0.289000004529953
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98587364269835809,
+        "RuntimeInSeconds": 0.3580000102519989
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98582339639152694,
+        "RuntimeInSeconds": 0.33899998664855957
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98571815877005731,
+        "RuntimeInSeconds": 0.26800000667572021
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98568410292988706,
+        "RuntimeInSeconds": 0.3919999897480011
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98494069485561353,
+        "RuntimeInSeconds": 0.46299999952316284
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98442979494263871,
+        "RuntimeInSeconds": 0.26800000667572021
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.98287520193179689,
+        "RuntimeInSeconds": 0.52499997615814209
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": 0.97916458622786,
+        "RuntimeInSeconds": 0.17100000381469727
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": 0.979155416714449,
+        "RuntimeInSeconds": 0.18299999833106995
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": 0.97899858149851959,
+        "RuntimeInSeconds": 0.17399999499320984
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": 0.97428165974900394,
+        "RuntimeInSeconds": 0.164000004529953
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.97116829313534281,
+        "RuntimeInSeconds": 0.39599999785423279
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.96803262175969762,
+        "RuntimeInSeconds": 0.35499998927116394
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": 0.96622278223595381,
+        "RuntimeInSeconds": 0.13500000536441803
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.96372189881663528,
+        "RuntimeInSeconds": 0.36000001430511475
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": 0.960107898009877,
+        "RuntimeInSeconds": 0.16500000655651093
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.95631503354026748,
+        "RuntimeInSeconds": 0.31700000166893005
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": 0.941549332618321,
+        "RuntimeInSeconds": 0.14200000464916229
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.9305159396338416,
+        "RuntimeInSeconds": 0.29600000381469727
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.9278168215600815,
+        "RuntimeInSeconds": 0.26499998569488525
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": 0.917278361610452,
+        "RuntimeInSeconds": 0.14100000262260437
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.820735472391527,
+        "RuntimeInSeconds": 0.8880000114440918
+      },
+      {
+        "TrainerName": "FastForestRegression",
+        "Score": 0.80636944950176626,
+        "RuntimeInSeconds": 0.24500000476837158
+      },
+      {
+        "TrainerName": "SdcaRegression",
+        "Score": 0.68658548214596193,
+        "RuntimeInSeconds": 0.23499999940395355
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.44541463739886406,
+        "RuntimeInSeconds": 0.34400001168251038
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.44510913323930257,
+        "RuntimeInSeconds": 0.34400001168251038
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.44472665162122338,
+        "RuntimeInSeconds": 0.25
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.44398822844949659,
+        "RuntimeInSeconds": 0.33399999141693115
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.42753565401609828,
+        "RuntimeInSeconds": 0.28600001335144043
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.42032902194346394,
+        "RuntimeInSeconds": 0.30000001192092896
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.021853234086722996,
+        "RuntimeInSeconds": 0.21699999272823334
+      },
+      {
+        "TrainerName": "FastTreeRegression",
+        "Score": 0.010417104638418707,
+        "RuntimeInSeconds": 0.24500000476837158
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.0097623440671372515,
+        "RuntimeInSeconds": 0.27099999785423279
+      },
+      {
+        "TrainerName": "FastTreeRegression",
+        "Score": -0.015043082515556517,
+        "RuntimeInSeconds": 0.24300000071525574
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": -0.017271983684698233,
+        "RuntimeInSeconds": 0.30199998617172241
+      },
+      {
+        "TrainerName": "FastTreeRegression",
+        "Score": -0.033050254965093194,
+        "RuntimeInSeconds": 0.28700000047683716
+      },
+      {
+        "TrainerName": "LightGbmRegression",
+        "Score": -0.034869411896884937,
+        "RuntimeInSeconds": 0.13400000333786011
+      },
+      {
+        "TrainerName": "FastTreeTweedieRegression",
+        "Score": 0.44405992636218583,
+        "RuntimeInSeconds": 0.40599998831748962
+      }
+    ],
+    "Pipeline": "[{\"EstimatorType\":\"ReplaceMissingValues\",\"Inputs\":[\"calories eat change\",\"calorie for KG\"],\"Outputs\":[\"calories eat change\",\"calorie for KG\"]},{\"EstimatorType\":\"Concatenate\",\"Inputs\":[\"calories eat change\",\"calorie for KG\"],\"Outputs\":[\"Features\"]},{\"LabelColumnName\":\"weekly weight change\",\"FeatureColumnName\":\"Features\",\"NumberOfTrees\":\"14\",\"FeatureFraction\":\"0.84931808143914\",\"EstimatorType\":\"FastForestRegression\",\"Inputs\":[\"weekly weight change\"],\"Outputs\":[\"Features\"]}]",
+    "MetricName": "RSquared"
+  }
+}

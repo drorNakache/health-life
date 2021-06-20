@@ -18,7 +18,13 @@ export class EatGoalFormComponent implements OnInit {
   constructor(public service:EatGoalService,private userMangment:AuthorizeService) { }
   mealType:MealType;
   mealTypeString:string;
+
+
   ngOnInit() {
+
+
+
+
   }
   onSubmit(form: NgForm) {
 
@@ -84,6 +90,10 @@ export class EatGoalFormComponent implements OnInit {
 
   }
 
+  foodChanged(){
+    
+
+  }
 
   
   resetForm(form: NgForm) {

@@ -9,13 +9,7 @@
     </div>
     <br >
 
-    <label for="mealTypeSelect"> Meal select: </label><br>
-   <select class="form-control" name="mealTypeSelect" [(ngModel)]="mealTypeString" >
-      <option value="0">Breakfast</option>
-      <option value="1">Launch</option>
-      <option value="2">Dinner</option>
-      <option value="3">Snacks</option>
-    </select>
+ 
     <br>
     <div class="form-group">
         <label>food Name</label>
@@ -43,4 +37,51 @@
     <div class="form-group">
         <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
     </div>
+
+    <h4>Select Value</h4>
+
+    <select name="my-select" [(ngModel)]="mySelect" (change)="selectChange()">
+        <option [value]="item.fdcId" *ngFor="let item of foodList">
+            {{item.description}}
+        </option>
+    </select>
+    
+    
+    <h4>Selected Values</h4>
+    
+    <div>
+        Selected: {{selectedValue}}
+    </div>
+
+    <div class="jumbotron py-3">
+        <h1 class="display-4 text-center">FOOD LIST</h1>
+    </div>
+    <div class="">
+        
+        <div class=" ">
+            <div>
+                <table class="table">
+                    <thead class="thead-light">
+                     
+                        <tr>
+                           
+                            <th>Food name  |</th>
+                            <th class=""></th>
+                            <th class=""></th>
+                             <th>food nutrients</th>
+                           <th class=""></th>
+                           <th class=""></th>
+                          
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let food of foodList">
+                        <td >{{food.description}}</td>
+                        <td *ngFor="let nut of food.foodNutrients">{{nut.name}}={{nut.amount}}:{{nut.unitName}}</td>
+                                            
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </form>
+

@@ -10,10 +10,14 @@ import { EatDetailService } from '../services/eat-detail.service';
 export class EatDetailsComponent implements OnInit {
 
   constructor(public service: EatDetailService) { }
-
+ 
   ngOnInit() {
     this.service.refreshList();
+
+   
   }
+
+  
 
   populateForm(selectedRecord) {
     this.service.formData = Object.assign({}, selectedRecord);

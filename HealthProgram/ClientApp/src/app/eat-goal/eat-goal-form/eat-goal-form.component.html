@@ -19,7 +19,7 @@
     <br>
     <div class="form-group">
         <label>food Name</label>
-        <input class="form-control form-control-lg" placeholder="Food Name" name="foodName"
+        <input class="form-control form-control-lg" placeholder="Food Name" name="foodName" onchange="foodChanged()"
             #foodName="ngModel" [(ngModel)]="service.formData.foodName"
             required [class.invalid]="foodName.invalid &#038;&#038; foodName.touched">
     </div>

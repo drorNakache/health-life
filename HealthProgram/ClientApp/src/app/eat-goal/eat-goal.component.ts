@@ -14,6 +14,7 @@ export class EatGoalComponent implements OnInit {
   ngOnInit() {
 
     this.service.refreshList();
+    
   }
 
   populateForm(selectedRecord) {
