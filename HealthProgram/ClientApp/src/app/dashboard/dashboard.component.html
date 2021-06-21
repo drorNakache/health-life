@@ -212,7 +212,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">The last Weight Report</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{lastWeightReportDate}}</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{lastWeightReportDate|date}}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -424,7 +424,7 @@
                             </tr>
                         </thead>
                         <tr *ngFor="let pd of this.goalService.list;">
-                            <td>{{pd.eatDate}}</td>
+                            <td>{{pd.eatDate| date}}</td>
                             <td>{{pd.foodName}}</td>
                             <td>{{pd.calories}}</td>
                             <td>{{pd.unit}}</td>

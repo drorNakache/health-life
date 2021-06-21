@@ -30,8 +30,8 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/jquery-ui-dist/jquery-ui.js",
-              "node_modules/ng2-completer/bundles/ng2-completer.umd.js"
+              "node_modules/jquery-ui-dist/jquery-ui.js"
+              
             ],
             "vendorChunk": true,
             "extractLicenses": false,

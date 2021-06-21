@@ -28,7 +28,6 @@ import { EatGoalComponent } from './eat-goal/eat-goal.component';
 import { EatGoalFormComponent } from './eat-goal/eat-goal-form/eat-goal-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FoodListComponent } from './food-list/food-list.component';
-import { Ng2CompleterModule } from 'ng2-completer';
 import { ChartDashboardComponent } from './chart-dashboard/chart-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -59,7 +58,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    Ng2CompleterModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
     { path: '', component: HomeComponent, pathMatch: 'full' },

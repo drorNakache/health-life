@@ -19,7 +19,7 @@
                     </tr>
                 </thead>
                 <tr *ngFor="let pd of service.list">
-                    <td (click)="populateForm(pd)">{{pd.eatDate}}</td>
+                    <td (click)="populateForm(pd)">{{pd.eatDate | date}}</td>
                     <td (click)="populateForm(pd)">{{convartMealName(pd.mealType)}}</td>
 
                     <td (click)="populateForm(pd)">{{pd.foodName}}</td>
